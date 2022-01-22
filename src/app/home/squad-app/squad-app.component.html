@@ -1,0 +1,23 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Faça seu Squad</mat-label>
+    <textarea #textArea matInput placeholder="A cada 'enter' pressionado um item será válido"></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Escolha uma opção</mat-label>
+    <mat-select #select >
+      <!-- *ngFor="let food of foods" -->
+      <mat-option  value="numbersSquad">
+        Número de Squads
+      </mat-option>
+      <mat-option  value="membersSquad">
+        Membros por Squad
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input type="number" matInput value="1">
+  </mat-form-field>
+  <button [disabled]="!textArea.value || !select.value" (click)="enviar(textArea.value, select.value)" type="button" mat-raised-button color="accent">Gerar</button>
+</form>
+
