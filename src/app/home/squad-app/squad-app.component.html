@@ -16,8 +16,25 @@
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <input type="number" matInput value="1">
+    <input #quantity type="number" matInput value="1">
   </mat-form-field>
-  <button [disabled]="!textArea.value || !select.value" (click)="enviar(textArea.value, select.value)" type="button" mat-raised-button color="accent">Gerar</button>
+  <button [disabled]="!textArea.value || !select.value" (click)="enviar()" type="button" mat-raised-button color="accent">Gerar</button>
 </form>
+
+
+<!-- <div class="squads" *ngIf="showSquad">
+  <squad-card *ngFor="let i of squads.item; index as k" [index]="k" [content]="squads"></squad-card>
+</div> -->
+<!-- <mat-grid-list *ngIf="showSquad" cols="2" rowHeight="2:1">
+  <mat-grid-tile >
+    <squad-card *ngFor="let i of squads; index as k" [index]="k" [content]="i" ></squad-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<div class="squads" *ngIf="showSquad">
+  <div *ngFor="let i of squadsNum">
+    <h2>Squad #{{ i }}</h2>
+    <p *ngFor="let k of testing">{{ k }}</p>
+  </div>
+</div>
 
