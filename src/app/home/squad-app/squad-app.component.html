@@ -18,7 +18,7 @@
   <mat-form-field appearance="fill">
     <input #quantity type="number" matInput value="1">
   </mat-form-field>
-  <button [disabled]="!textArea.value || !select.value" (click)="enviar()" type="button" mat-raised-button color="accent">Gerar</button>
+  <button [disabled]="!textArea.value || !select.value" (click)="gerar()" type="button" mat-raised-button color="accent">Gerar</button>
 </form>
 
 
@@ -31,10 +31,10 @@
   </mat-grid-tile>
 </mat-grid-list> -->
 
-<div class="squads" *ngIf="showSquad">
-  <div *ngFor="let i of squadsNum">
+<div class="squads" [class.flex]="showSquad">
+  <div #squadItem *ngFor="let i of squadsNum">
     <h2>Squad #{{ i }}</h2>
-    <p *ngFor="let k of testing">{{ k }}</p>
   </div>
 </div>
 
+<!-- TODO: Componetizar e Estilização -->

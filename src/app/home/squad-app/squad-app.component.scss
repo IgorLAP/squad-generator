@@ -15,7 +15,11 @@ textarea{
 }
 
 .squads{
-  display: flex;
+  display: none;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.flex{
+  display: flex;
 }
