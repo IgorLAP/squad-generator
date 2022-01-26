@@ -54,7 +54,8 @@ export class SquadAppComponent implements OnInit {
           const child = this.document.createElement('p');
           child.innerHTML = names[random];
           setTimeout(()=>{
-            this.renderer.appendChild(this.squadItem.toArray()[index].nativeElement, child)
+            this.renderer.addClass(this.squadItem.toArray()[index].nativeElement, 'squadItem');
+            this.renderer.appendChild(this.squadItem.toArray()[index].nativeElement, child);
           },100)
         }
         names.splice(random, 1);

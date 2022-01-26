@@ -4,16 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './../shared/material/material.module';
 import { HomeRoutingModule } from './home-routing.module';
-import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SquadAppComponent } from './squad-app/squad-app.component';
-import { SquadCardComponent } from './components/squad-card/squad-card.component';
 
 
 @NgModule({
   declarations: [
-    LoadingPageComponent,
-    SquadAppComponent,
-    SquadCardComponent
+    LandingPageComponent,
+    SquadAppComponent
   ],
   imports: [
     CommonModule,

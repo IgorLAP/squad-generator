@@ -14,6 +14,19 @@ textarea{
   width: 100%;
 }
 
+.yourSquadsHead{
+  max-width: 980px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+
+  button{
+    height: 100%;
+    margin-left: 10px;
+  }
+}
+
 .squads{
   display: none;
   justify-content: center;
@@ -22,4 +35,12 @@ textarea{
 
 .flex{
   display: flex;
+}
+
+.squadItem{
+  background-color: #454545;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 15%;
 }

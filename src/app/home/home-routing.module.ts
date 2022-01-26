@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SquadAppComponent } from './squad-app/squad-app.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: LoadingPageComponent
+    component: LandingPageComponent
   },
   {
     path: 'app',

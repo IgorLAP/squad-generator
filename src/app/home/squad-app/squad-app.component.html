@@ -1,4 +1,6 @@
+
 <form class="example-form">
+  <h1>Squad Generator</h1>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Faça seu Squad</mat-label>
     <textarea #textArea matInput placeholder="A cada 'enter' pressionado um item será válido"></textarea>
@@ -20,21 +22,16 @@
   </mat-form-field>
   <button [disabled]="!textArea.value || !select.value" (click)="gerar()" type="button" mat-raised-button color="accent">Gerar</button>
 </form>
-
-
-<!-- <div class="squads" *ngIf="showSquad">
-  <squad-card *ngFor="let i of squads.item; index as k" [index]="k" [content]="squads"></squad-card>
-</div> -->
-<!-- <mat-grid-list *ngIf="showSquad" cols="2" rowHeight="2:1">
-  <mat-grid-tile >
-    <squad-card *ngFor="let i of squads; index as k" [index]="k" [content]="i" ></squad-card>
-  </mat-grid-tile>
-</mat-grid-list> -->
-
+<hr/>
+<div class="yourSquadsHead">
+  <h2>Seus squads</h2>
+  <button mat-raised-button color="primary">Exportar</button>
+</div>
 <div class="squads" [class.flex]="showSquad">
   <div #squadItem *ngFor="let i of squadsNum">
-    <h2>Squad #{{ i }}</h2>
+    <h3>Squad #{{ i }}</h3>
   </div>
 </div>
+
 
 <!-- TODO: Componetizar e Estilização -->
