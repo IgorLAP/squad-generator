@@ -18,7 +18,7 @@ export class SquadAppComponent implements OnInit {
 
   showSquad = false;
   squadsNum!: Array<number>;
-  dataToCsv: any = [];
+  dataToCsv: [{}] = [{}];
 
 
   constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) { }
@@ -69,14 +69,14 @@ export class SquadAppComponent implements OnInit {
 
   exportar(){
     if(this.squadItem.toArray().length !== 0){
-      this.dataToCsv = [];
+      this.dataToCsv = [{}];
 
       let options = {
         fieldSeparator: ',',
         quoteStrings: '"',
         decimalseparator: '.',
         showLabels: true,
-        showTitle: true,
+        showTitle: false,
         title: 'Squad-Generator',
         useBom: true,
         noDownload: false,
@@ -100,7 +100,7 @@ export class SquadAppComponent implements OnInit {
           [key] : newTxt
         })
       }
-      new ngxCsv(this.dataToCsv, 'test2', options);
+      new ngxCsv(this.dataToCsv, 'squads', options);
     }
 
   }

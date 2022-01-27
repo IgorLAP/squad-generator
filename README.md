@@ -1,27 +1,26 @@
-# SquadGenerator
+# DESAFIO - SoulCode Academy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+## Crie uma aplicação que gera squads (squad-generator):
+- Deverá receber os nomes de todos os membros em um <textarea> separados por ENTER.
+- Deve ser sorteado com base no número de squads ou no número de integrantes por equipe. Ou seja, o usuário pode escolher sortear N equipes, ou sortear N pessoas por equipe.
+- EXTRA: Deve apresentar uma opção para exportar os squads divididos(formato csv)
+- Procurar algum tutorial no youtube ou biblioteca que exporta em csv.
 
-## Development server
+Este desafio (opcional) é para todos que gostam de se desafiar e aprender um pouco mais.
+Pode ser feito por até 3 pessoas. É necessário enviar o nome do trio previamente.
+  
+### Instalação <br/>
+`git clone` and `npm install`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Rodando o projeto <br/>
+`ng serve`
 
-## Code scaffolding
+### Libraries and tools
+- `angular router`
+- `angular material`
+- `firebase`
+- `firebase deploy`
+- `ngx-csv`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Squad-generator
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
