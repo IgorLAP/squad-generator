@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "squad-generator-b602a": {
+      "hosting": {
+        "squad-generator": [
+          "squad-generator-b602a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "squad-generator-b602a"
+  }
+}

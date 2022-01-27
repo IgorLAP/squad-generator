@@ -22,5 +22,6 @@ Pode ser feito por até 3 pessoas. É necessário enviar o nome do trio previame
 - `firebase deploy`
 - `ngx-csv`
 
-## Squad-generator
+## Deploy [Firebase Hosting]
 
+[Squad-Generator](squad-generator-b602a.web.app)
