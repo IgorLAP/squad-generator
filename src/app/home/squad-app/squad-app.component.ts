@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, ElementRef, Inject, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 
 @Component({
@@ -17,6 +18,8 @@ export class SquadAppComponent implements OnInit {
 
   showSquad = false;
   squadsNum!: Array<number>;
+  dataToCsv: any = [];
+
 
   constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) { }
 
@@ -33,7 +36,6 @@ export class SquadAppComponent implements OnInit {
           }
         });
       }
-
     }
     const names: string[] = this.textArea.nativeElement.value.split('\n');
     const namesLength = names.length;
@@ -57,6 +59,7 @@ export class SquadAppComponent implements OnInit {
             this.renderer.addClass(this.squadItem.toArray()[index].nativeElement, 'squadItem');
             this.renderer.appendChild(this.squadItem.toArray()[index].nativeElement, child);
           },100)
+
         }
         names.splice(random, 1);
       }
@@ -64,4 +67,43 @@ export class SquadAppComponent implements OnInit {
     this.showSquad = true;
   }
 
+  exportar(){
+    if(this.squadItem.toArray().length !== 0){
+      this.dataToCsv = [];
+
+      let options = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true,
+        showTitle: true,
+        title: 'Squad-Generator',
+        useBom: true,
+        noDownload: false,
+        headers: ["SQUADS"]
+      };
+
+      for(let i = 0; i < this.squadItem.toArray().length; i++){
+        const key = `squad#${i}`;
+        const squadArray = this.squadItem.toArray()[i].nativeElement.innerText.split('\n\n');
+        squadArray.shift();
+        let newTxt = '';
+        for(let k in squadArray){
+          if(Number(k) + 1 === squadArray.length){
+            newTxt += `${squadArray[k]}`;
+          } else {
+            newTxt += `${squadArray[k]}, `;
+          }
+        }
+
+        this.dataToCsv.push({
+          [key] : newTxt
+        })
+      }
+      new ngxCsv(this.dataToCsv, 'test2', options);
+    }
+
+  }
+
 }
+
