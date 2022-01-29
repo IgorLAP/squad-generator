@@ -24,4 +24,4 @@ Pode ser feito por até 3 pessoas. É necessário enviar o nome do trio previame
 
 ## Deploy [Firebase Hosting]
 
-[Squad-Generator](squad-generator-b602a.web.app)
+[Squad-Generator](https://squad-generator-b602a.web.app/)
